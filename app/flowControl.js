@@ -11,6 +11,31 @@ define(function() {
       //
       // otherwise the function should return the number, or false if no number
       // was provided or the value provided is not a number
+      //
+      var result = num;
+
+      var divisible_by = function(number, divisible) {
+        return (number % divisible === 0);
+      };
+
+
+      if(arguments.length === 0) {
+        result = false;
+      }
+      else if (isNaN(num)) {
+        result = false;
+      }
+      else if (divisible_by(num, 3) && divisible_by(num, 5)) {
+        result = 'fizzbuzz';
+      }
+      else if (divisible_by(num, 3)) {
+        result = 'fizz';
+      }
+      else if (divisible_by(num, 5)) {
+        result = 'buzz';
+      }
+
+      return result;
     }
   };
 });
